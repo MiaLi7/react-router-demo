@@ -78,7 +78,7 @@ ReactDOM.render(
 serviceWorker.unregister();
 ```
 #### （3). 修改App.js
-
+为了方便查看效果，我们修改`App.js`文件中的代码为如下：
 	import React from 'react';
 	import { Link} from 'react-router-dom';
 	import './App.css';
@@ -98,7 +98,10 @@ serviceWorker.unregister();
 
 	export default App;
 
-#### （4). 新建一个组件 Page2.js
+#### （4). 新建一个组件 Page2
+在`src`文件夹下新建一个文件夹`components`,在`components`文件夹下新建一个文件`Page2.js`,在该文件中写页面跳转的组件。
+
+`Page2.js`文件的代码如下：
 
 	import React from 'react';
 	import { Link } from 'react-router-dom';
@@ -118,6 +121,7 @@ serviceWorker.unregister();
 		}
 	 }
 	 export default Page2;
+
 
 ####(5). 实现效果
 在主页面显示出一个home,点击跳转到Page2,则会渲染到Page2页面的内容，从Page2也可以跳转返回到home主页，实现页面之间的跳转。
