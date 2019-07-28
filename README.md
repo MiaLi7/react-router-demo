@@ -6,14 +6,14 @@
 ## 二、实现步骤
 
 ### 1、创建项目
-假定当前所在的文件目录为` D:\work\workspace\react` ，在目录空白处按住键盘shift键，同时鼠标右键，选择“在此处打开命令窗口”，在打开的命令行窗口中输入命令
+选择你想要存放项目的路径，假定当前所在的文件目录为` D:\work\workspace\react` ，在目录空白处按住键盘shift键，同时鼠标右键，选择“在此处打开命令窗口”，在打开的命令行窗口中输入命令
 
 	create-react-app react-router-demo
 
 ,其中`react-router-demo`是你想创建的项目名字，输入完全后，按回车，可以看到命令行窗口一直在跳动，这样`create-react-app`就会自动帮我们下载项目所要依赖的文件了，我们只要等待项目创建完成就可以了。当命令行窗口出现`Happy hacking!`，即项目创建完成，我们可以在`D:\work\workspace\react`目录下发现该目录下多了一个`react-router-demo`的文件夹，这就是我们创建的项目了。
 
 ### 2、项目文件目录结构
-	├── node_modules							// 项目第三方依赖文件
+	├── node_modules                            // 项目第三方依赖文件
 	├── public                                  // 放静态资源
 	├── src                                     // 源码目录
 	│   ├── App.css                             // 组件样式
@@ -55,7 +55,7 @@
 ![package.json](https://github.com/LiJinLan/react-router-demo/raw/master/docImages/install_router.png "package.json")
 
 #### （2). 引入router
-打开`src`目录下的`index.js`文件，在文件头部引入`Router、Route`,用Router包裹住Route,Route是声明路由，有两个属性path和component，path表示路由跳转的地址，component表示路由跳转后加载的组件。
+打开`src`目录下的`index.js`文件，在文件头部引入`Router、Route`,用Router包裹住Route,Route是声明路由，声明跳转的路径和跳转后加载的组件，有两个属性path和component，path表示路由跳转的地址，component表示路由跳转后加载的组件。我们是实现在两个不同的页面进行跳转，所以这里声明两个路由，要把用到的组件引入进来，实现在App组件和Page2组件之间的跳转。
 
 `index.js`文件的代码如下所示：
 ```js
@@ -78,7 +78,9 @@ ReactDOM.render(
 serviceWorker.unregister();
 ```
 #### （3). 修改App.js
-为了方便查看效果，我们修改`App.js`文件中的代码为如下：
+为了方便查看效果，在App组件中提供一个Link点击触发路由实现跳转。
+
+`App.js`文件中的代码为如下，
 
 	import React from 'react';
 	import { Link} from 'react-router-dom';
