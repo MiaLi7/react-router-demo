@@ -13,20 +13,20 @@
 ,其中`react-router-demo`是你想创建的项目名字，输入完全后，按回车，可以看到命令行窗口一直在跳动，这样`create-react-app`就会自动帮我们下载项目所要依赖的文件了，我们只要等待项目创建完成就可以了。当命令行窗口出现`Happy hacking!`，即项目创建完成，我们可以在`D:\work\workspace\react`目录下发现该目录下多了一个`react-router-demo`的文件夹，这就是我们创建的项目了。
 
 ### 2、项目文件目录结构
-├── node_modules							// 项目第三方依赖文件
-├── public                                  // 放静态资源
-├── src                                     // 源码目录
-│   ├── App.css                             // 组件样式
-│   ├── App.js                              // 组件文件
-│   ├── App.test.js                         // 组件测试文件
-│   ├── index.css                           // 项目入口文件样式
-│   ├── index.js                            // 项目入口文件
-│   ├── logo.svg                            // 项目图标文件
-│   ├── serviceWorker.js                    // 资源缓存
-├── .gitignore                              // 告诉Git哪些文件不需要添加到版本管理中
-├── package-lock.json                       // 锁定安装时的包的版本号
-├── package.json                            // 项目配置文件，项目依赖包版本号
-├── README.md                               // 项目的说明文件
+	├── node_modules							// 项目第三方依赖文件
+	├── public                                  // 放静态资源
+	├── src                                     // 源码目录
+	│   ├── App.css                             // 组件样式
+	│   ├── App.js                              // 组件文件
+	│   ├── App.test.js                         // 组件测试文件
+	│   ├── index.css                           // 项目入口文件样式
+	│   ├── index.js                            // 项目入口文件
+	│   ├── logo.svg                            // 项目图标文件
+	│   ├── serviceWorker.js                    // 资源缓存
+	├── .gitignore                              // 告诉Git哪些文件不需要添加到版本管理中
+	├── package-lock.json                       // 锁定安装时的包的版本号
+	├── package.json                            // 项目配置文件，项目依赖包版本号
+	├── README.md                               // 项目的说明文件
 
 ![项目目录结构](https://github.com/LiJinLan/react-router-demo/raw/master/docImages/file_structure.png "项目目录结构")
 
@@ -55,7 +55,7 @@
 ![package.json](https://github.com/LiJinLan/react-router-demo/raw/master/docImages/install_router.png "package.json")
 
 #### （2). 引入router
-打开`src`目录下的`index.js`文件，在文件头部引入`Router、Route`,用Router包裹住Route,Route是声明路由，有两个属性path和component，path表示路由跳转的地址，component表示路由。
+打开`src`目录下的`index.js`文件，在文件头部引入`Router、Route`,用Router包裹住Route,Route是声明路由，有两个属性path和component，path表示路由跳转的地址，component表示路由跳转后加载的组件。
 
 `index.js`文件的代码如下所示：
 ```js
@@ -79,6 +79,7 @@ serviceWorker.unregister();
 ```
 #### （3). 修改App.js
 为了方便查看效果，我们修改`App.js`文件中的代码为如下：
+
 	import React from 'react';
 	import { Link} from 'react-router-dom';
 	import './App.css';
@@ -99,7 +100,7 @@ serviceWorker.unregister();
 	export default App;
 
 #### （4). 新建一个组件 Page2
-在`src`文件夹下新建一个文件夹`components`,在`components`文件夹下新建一个文件`Page2.js`,在该文件中写页面跳转的组件。
+在`src`文件夹下新建一个文件夹`components`,用来存放自定义的组件,在`components`文件夹下新建一个文件`Page2.js`,在该文件中写页面跳转的组件。
 
 `Page2.js`文件的代码如下：
 
@@ -123,8 +124,8 @@ serviceWorker.unregister();
 	 export default Page2;
 
 
-####(5). 实现效果
-在主页面显示出一个home,点击跳转到Page2,则会渲染到Page2页面的内容，从Page2也可以跳转返回到home主页，实现页面之间的跳转。
+#### (5). 实现效果
+在主页面显示出一个`home`,点击跳转到`Page2`,则会渲染到`Page2`页面的内容，从`Page2`也可以跳转返回到`home`主页，实现页面之间的跳转。
 
 ![主页面效果](https://github.com/LiJinLan/react-router-demo/raw/master/docImages/homePage.png "主页面效果")
 
